@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="PrintLab Pro Divine - Calculateur d'impression ultime | Bichara Abakar Hangata 23B472FS">
+    <meta name="author" content="Bichara Abakar Hangata 23B472FS">
+    <meta name="theme-color" content="#0a0e14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>✨ PrintLab Pro Divine • Bichara Abakar Hangata 23B472FS</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23ff6b6b'/><stop offset='50%25' style='stop-color:%23feca57'/><stop offset='100%25' style='stop-color:%2354a0ff'/></linearGradient></defs><circle cx='50' cy='50' r='46' fill='url(%23g)'/><text x='50' y='68' font-size='45' text-anchor='middle' fill='white' font-weight='bold'>🖨</text></svg>">
+    
+    <!-- Polices Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Pro -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas Particules -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Effets 3D Background -->
+    <div class="bg-universe">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+        <div class="nebula nebula-4"></div>
+        <div class="nebula nebula-5"></div>
+    </div>
+    
+    <!-- Grille Cyber -->
+    <div class="cyber-grid"></div>
+    
+    <!-- Étoiles -->
+    <div class="stars-container" id="starsContainer"></div>
+    
+    <!-- Container App -->
+    <div class="app-shell">
+        
+        <!-- Sidebar Pro -->
+        <aside class="sidebar-pro" id="sidebarPro">
+            <div class="sidebar-glow-top"></div>
+            
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <div class="logo-hexagon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                </div>
+                <div class="brand-text">
+                    <h1 class="gradient-rainbow">PrintLab</h1>
+                    <span class="brand-edition">Pro Divine</span>
+                </div>
+            </div>
+            
+            <nav class="nav-pro">
+                <a href="#upload" class="nav-item active" data-section="upload">
+                    <span class="nav-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                    <span class="nav-label">Upload</span>
+                    <span class="nav-badge">Fichier</span>
+                </a>
+                <a href="#options" class="nav-item" data-section="options">
+                    <span class="nav-icon"><i class="fas fa-sliders-h"></i></span>
+                    <span class="nav-label">Options</span>
+                    <span class="nav-badge">Config</span>
+                </a>
+                <a href="#preview" class="nav-item" data-section="preview">
+                    <span class="nav-icon"><i class="fas fa-eye"></i></span>
+                    <span class="nav-label">Aperçu</span>
+                    <span class="nav-badge">Preview</span>
+                </a>
+                <a href="#result" class="nav-item" data-section="result">
+                    <span class="nav-icon"><i class="fas fa-receipt"></i></span>
+                    <span class="nav-label">Résultat</span>
+                    <span class="nav-badge">Facture</span>
+                </a>
+                <a href="#history" class="nav-item" data-section="history">
+                    <span class="nav-icon"><i class="fas fa-history"></i></span>
+                    <span class="nav-label">Historique</span>
+                    <span class="nav-badge" id="historyCount">0</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-pro-card">
+                    <div class="user-avatar-pro">
+                        <div class="avatar-ring-animated"></div>
+                        <span>BH</span>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">Bichara A. Hangata</div>
+                        <div class="user-id">23B472FS</div>
+                    </div>
+                </div>
+                <div class="supervisor-pro">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <div>
+                        <span class="sup-label">Encadreur</span>
+                        <span class="sup-name">Ing. Samuel Kotva</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-pro">
+            
+            <!-- Top Bar -->
+            <header class="topbar-pro">
+                <button class="menu-toggle-pro" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+                
+                <div class="topbar-center">
+                    <div class="live-info">
+                        <div class="live-clock" id="liveClock">
+                            <i class="far fa-clock"></i>
+                            <span id="currentTime">--:--:--</span>
+                        </div>
+                        <div class="live-date" id="liveDate">---</div>
+                    </div>
+                </div>
+                
+                <div class="topbar-right">
+                    <div class="currency-display">
+                        <span>XAF</span>
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="notification-pro" id="notificationBell">
+                        <i class="far fa-bell"></i>
+                        <span class="notif-dot pulse"></span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- SECTION 1: UPLOAD -->
+            <section id="upload" class="section-pro" data-aos="fade-up">
+                <div class="section-header">
+                    <div class="section-icon rainbow">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div>
+                        <h2>Chargement du Document</h2>
+                        <p>Formats acceptés : Word (.doc, .docx) et PDF (.pdf)</p>
+                    </div>
+                </div>
+                
+                <div class="upload-zone-pro" id="uploadZone">
+                    <input type="file" id="fileInput" accept=".doc,.docx,.pdf" multiple>
+                    
+                    <div class="upload-visual">
+                        <div class="upload-illustration">
+                            <div class="floating-doc doc-1">📄</div>
+                            <div class="floating-doc doc-2">📑</div>
+                            <div class="floating-doc doc-3">📕</div>
+                            <div class="upload-center-icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-text">
+                        <h3>Glissez-déposez vos fichiers ici</h3>
+                        <p>ou <span class="browse-link">parcourez</span> pour sélectionner</p>
+                        <p class="upload-hint">Vous pouvez charger plusieurs fichiers simultanément</p>
+                    </div>
+                    
+                    <div class="format-badges">
+                        <span class="format-badge word"><i class="fas fa-file-word"></i> Word</span>
+                        <span class="format-badge pdf"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="format-badge max">Max 50 Mo</span>
+                    </div>
+                </div>
+                
+                <!-- Files Queue -->
+                <div class="files-queue" id="filesQueue"></div>
+                
+                <!-- Single File Preview -->
+                <div class="file-preview-pro" id="filePreviewPro" style="display: none;">
+                    <div class="preview-card">
+                        <div class="preview-icon" id="previewIcon">📄</div>
+                        <div class="preview-info">
+                            <div class="preview-name" id="previewName"></div>
+                            <div class="preview-meta">
+                                <span id="previewSize"></span>
+                                <span class="dot-separator">•</span>
+                                <span id="previewType"></span>
+                            </div>
+                            <div class="preview-pages" id="previewPages">
+                                <i class="fas fa-file-alt"></i>
+                                <span id="detectedPagesText">Pages à détecter</span>
+                            </div>
+                        </div>
+                        <div class="preview-actions">
+                            <button class="preview-btn danger" id="removeFileBtn">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION 2: OPTIONS -->
+            <section id="options" class="section-pro" data-aos="fade-up" data-aos-delay="100">
+                <div class="section-header">
+                    <div class="section-icon gold">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div>
+                        <h2>Configuration d'Impression</h2>
+                        <p>Personnalisez vos paramètres d'impression</p>
+                    </div>
+                </div>
+                
+                <!-- Type d'impression -->
+                <div class="option-group">
+                    <h3 class="option-title">
+                        <i class="fas fa-palette"></i>
+                        Type d'impression
+                    </h3>
+                    
+                    <div class="print-type-cards">
+                        <div class="print-card couleur selected" id="couleurCard" data-type="couleur">
+                            <div class="card-ribbon">Premium</div>
+                            <div class="card-check"><i class="fas fa-check-circle"></i></div>
+                            <div class="card-visual">
+                                <div class="color-spectrum">
+                                    <span style="background:#ff6b6b;"></span>
+                                    <span style="background:#feca57;"></span>
+                                    <span style="background:#48dbfb;"></span>
+                                    <span style="background:#ff9ff3;"></span>
+                                    <span style="background:#54a0ff;"></span>
+                                </div>
+                            </div>
+                            <h4>Couleur</h4>
+                            <div class="card-price">250 <small>FCFA/page</small></div>
+                            <p>Qualité professionnelle • Couleurs éclatantes</p>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> Résolution 1200 DPI</li>
+                                <li><i class="fas fa-check"></i> Papier glacé disponible</li>
+                                <li><i class="fas fa-check"></i> Recto-verso inclus</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="print-card nb" id="nbCard" data-type="nb">
+                            <div class="card-ribbon eco">Éco</div>
+                            <div class="card-check"><i class="fas fa-check-circle"></i></div>
+                            <div class="card-visual">
+                                <div class="grayscale-spectrum">
+                                    <span style="background:#000;"></span>
+                                    <span style="background:#444;"></span>
+                                    <span style="background:#888;"></span>
+                                    <span style="background:#ccc;"></span>
+                                    <span style="background:#fff; border:1px solid #ddd;"></span>
+                                </div>
+                            </div>
+                            <h4>Noir & Blanc</h4>
+                            <div class="card-price">100 <small>FCFA/page</small></div>
+                            <p>Économique • Niveaux de gris précis</p>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> Résolution 600 DPI</li>
+                                <li><i class="fas fa-check"></i> Papier standard</li>
+                                <li><i class="fas fa-check"></i> Recto simple</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Options avancées -->
+                <div class="option-group">
+                    <h3 class="option-title">
+                        <i class="fas fa-cogs"></i>
+                        Options avancées
+                    </h3>
+                    
+                    <div class="advanced-options-grid">
+                        <!-- Nombre de pages -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-copy"></i>
+                                Nombre de pages
+                            </label>
+                            <div class="input-spinner">
+                                <button class="spinner-btn" id="decPages">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="pagesInput" value="1" min="1" max="9999">
+                                <button class="spinner-btn" id="incPages">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <button class="detect-btn" id="detectPagesBtn">
+                                <i class="fas fa-magic"></i> Auto-détecter
+                            </button>
+                        </div>
+                        
+                        <!-- Nombre de copies -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-layer-group"></i>
+                                Nombre de copies
+                            </label>
+                            <div class="input-spinner">
+                                <button class="spinner-btn" id="decCopies">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="copiesInput" value="1" min="1" max="100">
+                                <button class="spinner-btn" id="incCopies">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Format papier -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-file"></i>
+                                Format papier
+                            </label>
+                            <select id="paperSize" class="select-pro">
+                                <option value="a4">A4 (Standard)</option>
+                                <option value="a3">A3 (+50%)</option>
+                                <option value="letter">Letter US</option>
+                                <option value="legal">Legal</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Orientation -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-arrows-alt"></i>
+                                Orientation
+                            </label>
+                            <div class="orientation-toggle">
+                                <button class="orient-btn active" data-orient="portrait">
+                                    <i class="fas fa-arrow-up"></i> Portrait
+                                </button>
+                                <button class="orient-btn" data-orient="landscape">
+                                    <i class="fas fa-arrow-right"></i> Paysage
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Recto-verso -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-copy"></i>
+                                Recto-verso
+                            </label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="rectoVerso">
+                                <label for="rectoVerso" class="toggle-label">
+                                    <span class="toggle-text on">Oui</span>
+                                    <span class="toggle-text off">Non</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Reliure -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-book"></i>
+                                Reliure
+                            </label>
+                            <select id="binding" class="select-pro">
+                                <option value="none">Aucune</option>
+                                <option value="spiral">Spirale (+500 FCFA)</option>
+                                <option value="thermal">Thermique (+800 FCFA)</option>
+                                <option value="hardcover">Couverture rigide (+1500 FCFA)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Grammage papier -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-weight-hanging"></i>
+                                Grammage
+                            </label>
+                            <select id="paperWeight" class="select-pro">
+                                <option value="80">80 g/m² (Standard)</option>
+                                <option value="100">100 g/m² (+20%)</option>
+                                <option value="120">120 g/m² (+40%)</option>
+                                <option value="160">160 g/m² (+70%)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Délai -->
+                        <div class="advanced-option">
+                            <label>
+                                <i class="fas fa-clock"></i>
+                                Délai
+                            </label>
+                            <select id="deadline" class="select-pro">
+                                <option value="standard">Standard (24h)</option>
+                                <option value="express">Express (4h) (+30%)</option>
+                                <option value="urgent">Urgent (1h) (+60%)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION 3: APERÇU -->
+            <section id="preview" class="section-pro" data-aos="fade-up" data-aos-delay="200">
+                <div class="section-header">
+                    <div class="section-icon blue">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div>
+                        <h2>Aperçu du Document</h2>
+                        <p>Prévisualisation des pages</p>
+                    </div>
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <div class="preview-placeholder">
+                        <div class="placeholder-animation">
+                            <div class="page-flip">
+                                <div class="page page-front">📄</div>
+                                <div class="page page-back">📑</div>
+                            </div>
+                        </div>
+                        <p>Chargez un document pour voir l'aperçu</p>
+                    </div>
+                    
+                    <div class="preview-toolbar" style="display: none;" id="previewToolbar">
+                        <button id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                        <span id="pageIndicator">Page 1 / 1</span>
+                        <button id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                        <button id="zoomIn"><i class="fas fa-search-plus"></i></button>
+                        <button id="zoomOut"><i class="fas fa-search-minus"></i></button>
+                    </div>
+                    
+                    <div class="preview-canvas" id="previewCanvas"></div>
+                </div>
+            </section>
+            
+            <!-- SECTION 4: RÉSULTAT -->
+            <section id="result" class="section-pro" data-aos="fade-up" data-aos-delay="300">
+                <div class="section-header">
+                    <div class="section-icon green">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h2>Calcul et Facture</h2>
+                        <p>Détail des coûts d'impression</p>
+                    </div>
+                    <button class="btn-print-invoice" id="printInvoiceBtn">
+                        <i class="fas fa-print"></i> Imprimer
+                    </button>
+                </div>
+                
+                <!-- Bouton Calculer -->
+                <button class="btn-calculate-pro" id="calculateBtn" disabled>
+                    <span class="btn-icon"><i class="fas fa-calculator"></i></span>
+                    <span class="btn-text">Calculer le prix total</span>
+                    <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                    <div class="btn-shine"></div>
+                </button>
+                
+                <!-- Invoice -->
+                <div class="invoice-pro" id="invoicePro" style="display: none;">
+                    <div class="invoice-header">
+                        <div class="invoice-brand">
+                            <div class="invoice-logo">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div>
+                                <h3>PrintLab Pro Divine</h3>
+                                <p>Facture d'impression</p>
+                            </div>
+                        </div>
+                        <div class="invoice-meta">
+                            <div class="invoice-date" id="invoiceDate"></div>
+                            <div class="invoice-number" id="invoiceNumber"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="invoice-body">
+                        <table class="invoice-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Quantité</th>
+                                    <th>Prix unitaire</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="invoiceItems">
+                                <!-- Généré dynamiquement -->
+                            </tbody>
+                        </table>
+                        
+                        <div class="invoice-summary">
+                            <div class="summary-row">
+                                <span>Sous-total</span>
+                                <span id="subtotal">0 FCFA</span>
+                            </div>
+                            <div class="summary-row" id="discountRow" style="display: none;">
+                                <span>Remise</span>
+                                <span id="discount" style="color: var(--accent-green);">-0 FCFA</span>
+                            </div>
+                            <div class="summary-row" id="taxRow" style="display: none;">
+                                <span>TVA (19.25%)</span>
+                                <span id="tax">0 FCFA</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total-row">
+                                <span>Total à payer</span>
+                                <span id="totalAmount">0 FCFA</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Mode de paiement</span>
+                                <span id="paymentMethod">Espèces / Mobile Money</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="invoice-footer">
+                        <div class="footer-qr">
+                            <div class="qr-code">[QR]</div>
+                        </div>
+                        <div class="footer-info">
+                            <p><strong>Bichara Abakar Hangata</strong> • 23B472FS</p>
+                            <p>Encadreur: Ing. Samuel Kotva</p>
+                            <p class="footer-thanks">Merci de votre confiance ! 🙏</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Discount Code -->
+                <div class="discount-section" id="discountSection" style="display: none;">
+                    <div class="discount-input-group">
+                        <input type="text" id="discountCode" placeholder="Code promo / réduction">
+                        <button id="applyDiscount">Appliquer</button>
+                    </div>
+                    <div class="discount-message" id="discountMessage"></div>
+                </div>
+            </section>
+            
+            <!-- SECTION 5: HISTORIQUE -->
+            <section id="history" class="section-pro" data-aos="fade-up" data-aos-delay="400">
+                <div class="section-header">
+                    <div class="section-icon purple">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div>
+                        <h2>Historique des Impressions</h2>
+                        <p>Dernières factures générées</p>
+                    </div>
+                    <div class="history-actions">
+                        <button class="btn-sm" id="exportHistory">
+                            <i class="fas fa-download"></i> Exporter
+                        </button>
+                        <button class="btn-sm danger" id="clearHistory">
+                            <i class="fas fa-trash-alt"></i> Vider
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="history-filters">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="couleur">Couleur</button>
+                    <button class="filter-btn" data-filter="nb">Noir & Blanc</button>
+                    <button class="filter-btn" data-filter="today">Aujourd'hui</button>
+                </div>
+                
+                <div class="history-list-pro" id="historyList">
+                    <!-- Généré dynamiquement -->
+                </div>
+                
+                <div class="history-stats" id="historyStats" style="display: none;">
+                    <div class="stat-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <div>
+                            <span class="stat-value" id="totalPrints">0</span>
+                            <span class="stat-label">Impressions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-copy"></i>
+                        <div>
+                            <span class="stat-value" id="totalPages">0</span>
+                            <span class="stat-label">Pages</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <span class="stat-value" id="totalSpent">0 FCFA</span>
+                            <span class="stat-label">Dépensé</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer-pro">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>PrintLab Pro Divine</h4>
+                        <p>Calculateur d'impression professionnel</p>
+                        <p>Version 3.0 • 2025</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Upload multiple</li>
+                            <li>Détection automatique</li>
+                            <li>Options avancées</li>
+                            <li>Facture détaillée</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <p>Bichara Abakar Hangata</p>
+                        <p>23B472FS</p>
+                        <p>Ing. Samuel Kotva</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 PrintLab Pro Divine • Tous droits réservés</p>
+                    <p>Développé avec ❤️ par Bichara Abakar Hangata</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
